@@ -15,4 +15,4 @@ RUN python3 -m playwright install-deps
 # Bundle app source
 COPY . /app
 
-CMD ["python3", "app.py"]
+CMD ["python3", "main.py"]
