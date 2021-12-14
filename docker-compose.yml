@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    build: .
+    restart: always
+    depends_on:
+      - redis
+    env_file:
+      - .env
+  redis:
+    image: "redis:alpine"
+    command: ["redis-server", "--appendonly", "yes"]
+    restart: always
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:
+    driver: local
