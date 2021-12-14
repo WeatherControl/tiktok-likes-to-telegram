@@ -23,7 +23,7 @@ redis = Redis(host='redis')
 
 
 def already_posted(v_id):
-    return not redis.sismember('posted_videos', v_id)
+    return redis.sismember('posted_videos', v_id)
 
 
 def save_posted(v_id):
